@@ -35,7 +35,7 @@ function enviar() {
                 }else{
                     divRes.innerHTML += `<p>Sua biografia é '${data.bio}';</p>`
                 }
-                divRes.innerHTML += `<p>Você tem ${data.public_repos} repositórios.;</p>`
+                divRes.innerHTML += `<p id="pLast">Você tem ${data.public_repos} repositórios.;</p>`
             }
         }).finally(console.log('Tudo certo.'))
     }
