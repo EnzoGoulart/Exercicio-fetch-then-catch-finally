@@ -4,20 +4,22 @@ let botao = document.getElementById('botao')
 let perror = document.getElementById('perror')
 let divRes = document.getElementById('divRes')
 let contError1 = 0
-function enviar() {
+async function enviar() {
     if (user.value.length == 0 && contError1 < 1) {
         divError.innerHTML = `<p id="perror">Digite algo para enviar</p>`
         contError1 += 1
     } else {
         /*EnzoGoulart*/
+        console.log('aq')
         divError.style.display = 'none'
-        fetch(`https://api.github.com/users/${user.value}`, {
+        await fetch(`https://api.github.com/users/${user.value}`, {
             /*PS: sacada de mestre esse .value*/
             method: 'GET',
             headers: {
                 Accept: 'application/vnd.github.v3+json',
             },
         }).then(data => {
+            console.log('aq1')
             console.log(typeof data)
             console.log(data)
             return data.json()
